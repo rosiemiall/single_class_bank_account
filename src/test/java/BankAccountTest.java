@@ -106,7 +106,8 @@ public class BankAccountTest {
     void canDeposit(){
         BankAccount bankAccount = new BankAccount("John", "Smith",
                 "1950-05-05", 123456789);
-        double result = bankAccount.deposit(400);
+        bankAccount.deposit(400);
+        double result = bankAccount.getAccountBalance();
         double expected = 400;
         assertThat(result).isEqualTo(expected);
     }
@@ -115,7 +116,8 @@ public class BankAccountTest {
         BankAccount bankAccount = new BankAccount("John", "Smith",
                 "1950-05-05", 123456789);
         bankAccount.setAccountBalance(500.50);
-        double result = bankAccount.withdrawal(400);
+        bankAccount.withdrawal(400);
+        double result = bankAccount.getAccountBalance();
         double expected = 100.50;
         assertThat(result).isEqualTo(expected);
     }
@@ -171,7 +173,8 @@ public class BankAccountTest {
             "1950-05-05", 123456789);
         bankAccount.setAccountBalance(200);
         bankAccount.setAccountOverdraft(1000);
-        double result = bankAccount.withdrawal(300);
+        bankAccount.withdrawal(300);
+        double result = bankAccount.getAccountBalance();
         double expected = -100;
         assertThat(result).isEqualTo(expected);
 

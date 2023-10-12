@@ -63,16 +63,16 @@ public class BankAccount {
         this.accountBalance = newBalance;
     }
 
-    public double deposit(double newDeposit) {
+    public void deposit(double newDeposit) {
         this.accountBalance += newDeposit;
-        return this.accountBalance;
+//        return this.accountBalance;
     }
 
-    public double withdrawal(double newWithdrawal) {
+    public void withdrawal(double newWithdrawal) {
         if(this.accountBalance-newWithdrawal >= 0-this.accountOverdraft){
-            return this.accountBalance -= newWithdrawal ;
+            this.accountBalance -= newWithdrawal ;
         }
-        return this.accountBalance;
+//        return this.accountBalance;
     }
 
     public void payInterest() {
